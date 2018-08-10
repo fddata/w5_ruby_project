@@ -1,9 +1,9 @@
-DROP TABLE transactions; -- Drop the 'many' table first
+DROP TABLE transactions; -- Drop the 'many' tables first
 DROP TABLE merchants;
 DROP TABLE categories;
 DROP TABLE users;
 
---Create the 'one' table first, then the 'many' tables last.
+--Create the 'one' tables first, then the 'many' tables last.
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),

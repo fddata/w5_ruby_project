@@ -82,6 +82,7 @@ transaction1.save()
 # transaction1.merchant_id = merchant_cineworld.id
 # transaction1.category_id = category_gifts.id
 # transaction1.update() #Works
+transaction1.delete() #Works
 
 # user1.budget = 0.11
 # user1.update() # Works
