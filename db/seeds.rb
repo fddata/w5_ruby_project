@@ -1,10 +1,23 @@
 require_relative '../models/category.rb'
 require_relative '../models/merchant.rb'
+require_relative '../models/user.rb'
+require_relative '../models/transaction.rb'
 
 require 'pry-byebug'
 
 Category.delete_all()
 Merchant.delete_all()
+User.delete_all()
+Transaction.delete_all()
+
+
+#Seeding a user:
+user1 = User.new({
+  'name' => 'user1',
+  'budget' => 0
+  })
+
+user1.save()
 
 #Seeding some categories:
 
@@ -53,10 +66,27 @@ merchant_tesco.save()
 merchant_malones.save()
 merchant_cineworld.save()
 
+#Seeding some transactions
+transaction1 = Transaction.new({
+  'merchant_id' => merchant_tesco.id,
+  'user_id' => user1.id,
+  'amount' => 30.89,
+  'category_id' => category_bills.id,
+  'time_stamp' => Time.now()
+  })
 
-
+transaction1.save()
 
 ###CRUD tests here:
+# transaction1.amount = 100
+# transaction1.merchant_id = merchant_cineworld.id
+# transaction1.category_id = category_gifts.id
+# transaction1.update() #Works
+
+# user1.budget = 0.11
+# user1.update() # Works
+# user1.delete() #Works
+
 # merchant_tesco.name = "TEST"
 # merchant_tesco.update() # Works
 # merchant_malones.delete() # Works

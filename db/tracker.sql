@@ -6,6 +6,7 @@ DROP TABLE users;
 --Create the 'one' table first, then the 'many' tables last.
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
   budget FLOAT
 );
 

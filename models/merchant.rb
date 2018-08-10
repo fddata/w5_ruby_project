@@ -21,7 +21,7 @@ class Merchant
   def self.all()
     sql = "SELECT * FROM merchants"
     result = SqlRunner.run(sql)
-    return result.map { |merchant| Category.new(merchant)  }
+    return result.map { |merchant| Merchant.new(merchant)  }
   end
 
   def update()
@@ -45,7 +45,7 @@ class Merchant
     sql = "SELECT * FROM merchants WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
-    return Category.new(result)
+    return Merchant.new(result)
   end
 
 
