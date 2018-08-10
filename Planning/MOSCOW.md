@@ -22,7 +22,15 @@
 
 * The user should be able to filter their view of transactions, for example, to view all transactions in a given month, or view all spending on groceries.
 
-#### COULD
+#### COULD (my ideas)
+
+* Check to make sure that duplicate categories/merchants cannot be added
+
+* Show a budget overview on home screen?
+
+* Could allow
+
+* Show most recent transaction on home screen?
 
 * Allow multiple users?
 

@@ -1,12 +1,14 @@
-### User Journey
+### Development Diary
 ___
 ___
 
-**User action**
+**2018_08_11 - Friday**
 
+AM: Planning for Money Tracker, creating UX files (profiles, needs, MOSCOW and journeys).  Some simple layout sketches.
 
-**System Response**
+PM: DB and Class diagrams
 
+Mood: slightly worried I won't have enough time to do everything _and_ make the app look nice!
 ***
 
 **User action**
