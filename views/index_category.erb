@@ -1,0 +1,12 @@
+<h1>Category Index</h1>
+
+
+<h2>Total spending: £<%= @transactions.sum(&:amount)   %></h2>
+<hr>
+
+<% @categories.each do |category| %>
+<p>Name: <%= category.name %></p>
+
+<p>Spending within category: £<%= category.spending  %>  </p>
+<hr>
+<% end %>

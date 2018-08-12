@@ -10,6 +10,7 @@ also_reload('models/*')
 
 
 get '/tracker/view/merchant' do
+  @transactions = Transaction.all()
   @merchants = Merchant.all()
   erb(:index_merchant)
 end
@@ -19,7 +20,11 @@ get '/tracker/view/transaction' do
   erb(:index_transaction)
 end
 
-
+get '/tracker/view/category' do
+  @transactions = Transaction.all()
+  @categories = Category.all()
+  erb(:index_category)
+end
 
 
 #

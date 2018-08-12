@@ -70,7 +70,7 @@ merchant_cineworld.save()
 transaction1 = Transaction.new({
   'merchant_id' => merchant_tesco.id,
   'user_id' => user1.id,
-  'amount' => 30.89,
+  'amount' => 3.67,
   'category_id' => category_bills.id,
   'time_stamp' => Time.now()
   })

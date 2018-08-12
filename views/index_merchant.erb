@@ -1,5 +1,7 @@
 <h1>Merchant Index</h1>
 
+<h2>Total spending: £<%= @transactions.sum(&:amount)   %></h2>
+<hr>
 
 <% @merchants.each do |merchant| %>
 <p> Name: <%= merchant.name() %> </p>
