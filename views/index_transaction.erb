@@ -1,6 +1,9 @@
 <h1>Transaction Index</h1>
 
 
+<h2>Total spending: £<%= @transactions.sum(&:amount)   %></h2>
+<hr>
+
 <% @transactions.each do |transaction| %>
 <p> Time: <%= transaction.time_stamp() %> </p>
 <p>Amount: £<%= transaction.amount  %></p>
