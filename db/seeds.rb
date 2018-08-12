@@ -72,7 +72,7 @@ transaction1 = Transaction.new({
   'user_id' => user1.id,
   'amount' => 3.67,
   'category_id' => category_bills.id,
-  'time_stamp' => Time.now()
+  'time_stamp' => Time.utc(2018, 'jul',15,17,52,16)
   })
 
 transaction1.save()
@@ -88,7 +88,15 @@ transaction2 = Transaction.new({
 
 transaction2.save()
 
+transaction3 = Transaction.new({
+  'merchant_id' => merchant_tesco.id,
+  'user_id' => user1.id,
+  'amount' => 20,
+  'category_id' => category_entertainment.id,
+  'time_stamp' => Time.now()
+  })
 
+transaction3.save()
 
 ###CRUD tests here:
 # transaction1.amount = 100
