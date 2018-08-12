@@ -53,5 +53,32 @@ class Transaction
     return Transaction.new(result)
   end
 
+  def merchant
+    sql = "SELECT merchants.* FROM merchants
+           WHERE merchants.id = $1"
+    values =[@merchant_id]
+    result = SqlRunner.run(sql, values).first
+    return Merchant.new(result)
+  end
+
+  def category
+    sql = "SELECT categories.* FROM categories
+           WHERE categories.id = $1"
+    values =[@category_id]
+    result = SqlRunner.run(sql, values).first
+    return Category.new(result)
+  end
+
+
 
 end
+
+#
+# def films
+#   sql = "SELECT films.* FROM films
+#   INNER JOIN tickets ON
+#   tickets.film_id = films.id WHERE tickets.customer_id = $1"
+#   values = [@id]
+#   result = SqlRunner.run(sql, values)
+#   return result.map { |film| Film.new(film)  }
+# end

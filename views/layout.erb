@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My Finance Tracker</title>
+  </head>
+  <body>
+
+
+    <nav>
+      <ul>
+        <li><a href="/tracker">My Finance Tracker</a></li>
+        <li><a href="#">Add...</a></li>
+        <ul>
+          <li><a href="/tracker/add/merchant">Add merchant</a></li>
+          <li><a href="/tracker/add/category">Add category</a></li>
+          <li><a href="/tracker/add/transaction">Add transaction</a></li>
+        </ul>
+        <li><a href="#">View...</a></li>
+        <ul>
+          <li><a href="/tracker/view/merchant">View merchants</a></li>
+          <li><a href="/tracker/view/category">View categories</a></li>
+          <li><a href="/tracker/view/transaction">View transactions</a></li>
+        </ul>
+      </ul>
+    </nav>
+    <%= yield %>
+  </body>
+
+</body>
+</html>

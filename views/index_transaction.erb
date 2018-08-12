@@ -1,0 +1,11 @@
+<h1>Transaction Index</h1>
+
+
+<% @transactions.each do |transaction| %>
+<p> Time: <%= transaction.time_stamp() %> </p>
+<p>Amount: £<%= transaction.amount  %></p>
+<p>Merchant: <%= transaction.merchant.name %> </p>
+<p>Category: <%= transaction.category.name %></p>
+
+<hr>
+<% end %>

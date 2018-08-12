@@ -22,23 +22,23 @@ user1.save()
 #Seeding some categories:
 
 category_transport = Category.new({
-  'name' => 'transport'
+  'name' => 'Transport'
     })
 
 category_groceries = Category.new({
-  'name' => 'groceries'
+  'name' => 'Groceries'
     })
 
 category_entertainment = Category.new({
-  'name' => 'entertainment'
+  'name' => 'Entertainment'
     })
 
 category_bills = Category.new({
-  'name' => 'bills'
+  'name' => 'Bills'
     })
 
 category_gifts = Category.new({
-      'name' => 'gifts'
+      'name' => 'Gifts'
         })
 
 category_bills.save()
@@ -77,12 +77,25 @@ transaction1 = Transaction.new({
 
 transaction1.save()
 
+
+transaction2 = Transaction.new({
+  'merchant_id' => merchant_cineworld.id,
+  'user_id' => user1.id,
+  'amount' => 15.78,
+  'category_id' => category_entertainment.id,
+  'time_stamp' => Time.now()
+  })
+
+transaction2.save()
+
+
+
 ###CRUD tests here:
 # transaction1.amount = 100
 # transaction1.merchant_id = merchant_cineworld.id
 # transaction1.category_id = category_gifts.id
 # transaction1.update() #Works
-transaction1.delete() #Works
+# transaction1.delete() #Works
 
 # user1.budget = 0.11
 # user1.update() # Works
@@ -97,5 +110,5 @@ transaction1.delete() #Works
 # category_transport.delete() # Works
 
 
-# binding.pry
-# nil
+binding.pry
+nil
