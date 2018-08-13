@@ -5,10 +5,11 @@
 <hr>
 
 <% @transactions.each do |transaction| %>
-<p> Time: <%= transaction.time_stamp() %> </p>
+<p> Date: <%= transaction.time_stamp()[0..9] %> </p>
 <p>Amount: £<%= transaction.amount  %></p>
 <p>Merchant: <%= transaction.merchant.name %> </p>
 <p>Category: <%= transaction.category.name %></p>
-
+<p> <a href="/tracker/edit/transaction/<%= transaction.id %>">Edit transaction</a> </p>
+<p> <a href="/tracker/delete/transaction/<%= transaction.id %>">Delete transaction</a> </p>
 <hr>
 <% end %>

@@ -1,0 +1,48 @@
+<h1>Edit Transaction</h1>
+
+<hr>
+<h2>Original details:</h2>
+<p>Original Amount = £<%= @transaction.amount %></p>
+<p>Original Merchant = <%= @transaction.merchant.name %></p>
+<p>Original Category = <%= @transaction.category.name %></p>
+<p>Original Date = <%= @transaction.time_stamp[0..9] %></p>
+<hr>
+
+<h2>New details:</h2>
+
+<form action="/tracker/view/transaction/<%= @transaction.id%>" method="post">
+
+  <label for="merchant-select">Select Merchant:</label>
+  <select id="merchant-select" name="merchant_id">
+    <% @merchants.each do |merchant| %>
+    <option value= <%="#{merchant.id}"%>> <%= merchant.name %> </option>
+    <% end %>
+  </select>
+<br>
+
+  <label for="category-select">Select Category:</label>
+  <select id="category-select" name="category_id">
+    <% @categories.each do |category| %>
+    <option value= <%="#{category.id}"%>> <%= category.name %> </option>
+    <% end %>
+  </select>
+<br>
+
+
+<label for="amount">Amount: (£)</label>
+<input id = "amount" type="number" name="amount" min="0.01" step=".01" value=<%= @transaction.amount %> required>
+<br>
+
+<label for="time-stamp">Date:</label>
+<input id = "time-stamp" type="date" name="time_stamp"  value=<%= @transaction.time_stamp %> required>
+<br>
+
+<label hidden for="user-id">User:</label>
+<input hidden id = "user-id" type="text" name="user_id"  value=<%= @transaction.user_id %> required>
+<br>
+
+
+<input type="submit" value="Update Transaction">
+
+
+</form>

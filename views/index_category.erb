@@ -8,5 +8,10 @@
 <p>Name: <%= category.name %></p>
 
 <p>Total spending within category: £<%= category.spending %>  </p>
+
+
+
+<p> <a href="/tracker/edit/category/<%= category.id %>">Edit category</a> </p>
+<p> <a href="/tracker/delete/category/<%= category.id %>">Delete category</a> </p>
 <hr>
 <% end %>

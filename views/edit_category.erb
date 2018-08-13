@@ -1,0 +1,15 @@
+<h1>Edit Category</h1>
+<hr>
+<h2>Original Category</h2>
+<p>Original Name = <%= @category.name %></p>
+
+<h2>New details</h2>
+
+<form action="/tracker/view/category/<%= @category.id %>" method="post">
+
+<label for="name">Name: </label>
+<input type="text" name="name" value="<%= @category.name %>">
+<br>
+<input type="submit" value="Update Category">
+
+</form>

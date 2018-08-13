@@ -35,7 +35,7 @@ class Category
     sql = "SELECT SUM(amount) FROM transactions WHERE category_id = $1"
     values = [@id]
     result = SqlRunner.run(sql, values).first
-    return result['sum'].to_f
+    return '%.2f' % result['sum'].to_f
   end
 
 
