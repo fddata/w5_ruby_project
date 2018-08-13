@@ -69,16 +69,16 @@ class Transaction
     return Category.new(result)
   end
 
+  def self.order_ascending
+    sql = "SELECT * FROM transactions ORDER BY time_stamp"
+    result = SqlRunner.run(sql)
+    return result.map { |transaction| Transaction.new(transaction)  }
+  end
 
+  def self.order_descending
+    sql = "SELECT * FROM transactions ORDER BY time_stamp desc"
+    result = SqlRunner.run(sql)
+    return result.map { |transaction| Transaction.new(transaction)  }
+  end
 
 end
-
-#
-# def films
-#   sql = "SELECT films.* FROM films
-#   INNER JOIN tickets ON
-#   tickets.film_id = films.id WHERE tickets.customer_id = $1"
-#   values = [@id]
-#   result = SqlRunner.run(sql, values)
-#   return result.map { |film| Film.new(film)  }
-# end

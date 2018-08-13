@@ -57,3 +57,23 @@ post '/tracker/delete/transaction/:id' do
   @transaction.delete()
   redirect '/tracker/view/transaction'
 end
+
+
+#DELETE ALL
+post '/tracker/delete/transaction/all' do
+  Transaction.delete_all()
+  redirect '/tracker/view/transaction'
+end
+
+
+#ORDER TRANSACTIONS by DATE
+get '/tracker/view/transaction/descending' do
+  @transactions = Transaction.order_descending
+  erb(:"transactions/index_transaction")
+end
+
+#ORDER TRANSACTIONS by DATE
+get '/tracker/view/transaction/ascending' do
+  @transactions = Transaction.order_ascending
+  erb(:"transactions/index_transaction")
+end

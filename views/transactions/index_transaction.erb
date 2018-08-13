@@ -2,6 +2,17 @@
 
 
 <h2>Total spending: £<%= '%.2f' % @transactions.sum(&:amount)   %></h2>
+
+<form action="/tracker/view/transaction/ascending" method="get">
+  <input type="submit" value="Sort Oldest First">
+</form>
+<br>
+
+<form action="/tracker/view/transaction/descending" method="get">
+  <input type="submit" value="Sort Newest First">
+</form>
+<br>
+
 <hr>
 
 <% @transactions.each do |transaction| %>
