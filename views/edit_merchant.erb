@@ -1,0 +1,15 @@
+<h1>Edit Merchant</h1>
+<hr>
+<h2>Original Category</h2>
+<p>Original Name = <%= @merchant.name %></p>
+
+<h2>New details</h2>
+
+<form action="/tracker/view/merchant/<%= @merchant.id %>" method="post">
+
+<label for="name">Name: </label>
+<input type="text" name="name" value="<%= @merchant.name %>">
+<br>
+<input type="submit" value="Update Merchant">
+
+</form>

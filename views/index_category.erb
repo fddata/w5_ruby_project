@@ -1,7 +1,7 @@
 <h1>Category Index</h1>
 
 
-<h2>Total spending: £<%= @transactions.sum(&:amount)   %></h2>
+<h2>Total spending: £<%= '%.2f' % @transactions.sum(&:amount)   %></h2>
 <hr>
 
 <% @categories.each do |category| %>
@@ -11,7 +11,12 @@
 
 
 
-<p> <a href="/tracker/edit/category/<%= category.id %>">Edit category</a> </p>
-<p> <a href="/tracker/delete/category/<%= category.id %>">Delete category</a> </p>
+<form action="/tracker/edit/category/<%= category.id %>" method="get">
+  <input type="submit" value="Edit Category">
+</form>
+<br>
+<form onsubmit="return confirm('Are you sure you want to delete this category?')" action="/tracker/delete/category/<%= category.id %>" method="post">
+  <input type="submit" value="Delete Category">
+</form>
 <hr>
 <% end %>

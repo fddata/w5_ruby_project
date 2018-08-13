@@ -34,7 +34,7 @@ class Merchant
     sql = "SELECT SUM(amount) FROM transactions WHERE merchant_id = $1"
     values = [@id]
     result = SqlRunner.run(sql, values).first
-    return result['sum'].to_f().round(2)
+    return '%.2f' % result['sum'].to_f
   end
 
 

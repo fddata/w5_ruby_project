@@ -51,34 +51,69 @@ post '/tracker/view/category/:id' do
   @category.update()
   redirect '/tracker/view/category'
 end
-#
-# post '/pizza-orders/:id' do
-#   order = PizzaOrder.new(params)
-#   order.update()
-#   redirect "/pizza-orders/#{order.id}"
-# end
+
+get '/tracker/edit/merchant/:id' do
+  @merchant = Merchant.find(params[:id])
+  erb(:edit_merchant)
+end
+
+post '/tracker/view/merchant/:id' do
+  @merchant = Merchant.new(params)
+  @merchant.update()
+  redirect '/tracker/view/merchant'
+end
+
+post '/tracker/delete/transaction/:id' do
+  @transaction = Transaction.find(params[:id])
+  @transaction.delete()
+  redirect '/tracker/view/transaction'
+end
+
+post '/tracker/delete/merchant/:id' do
+  @merchant = Merchant.find(params[:id])
+  @merchant.delete()
+  redirect '/tracker/view/merchant'
+end
+
+post '/tracker/delete/category/:id' do
+  @category = Category.find(params[:id])
+  @category.delete()
+  redirect '/tracker/view/category'
+end
+
+get '/tracker/new/transaction' do
+  @user = User.all().first
+  @merchants = Merchant.all()
+  @categories = Category.all()
+  erb(:new_transaction)
+end
+
+post '/tracker/view/transaction' do
+  @transaction = Transaction.new(params)
+  @transaction.save()
+  redirect '/tracker/view/transaction'
+end
 
 
+get '/tracker/new/merchant' do
+  @merchants = Merchant.all()
+  erb(:new_merchant)
+end
 
-# get '/pizza-orders/:id' do
-#   @order = PizzaOrder.find(params[:id])
-#   erb(:show)
-# end
+post '/tracker/view/merchant' do
+  @merchant = Merchant.new(params)
+  @merchant.save()
+  redirect '/tracker/view/merchant'
+end
 
-#
-# #EDIT
-# #edit is accessed via a href button on the show.erb.
-# get '/pizza-orders/:id/edit' do
-#   @order = PizzaOrder.find(params[:id])
-#   erb(:edit)
-# end
-#
-# #UPDATE - we are redirected here from the erb(:edit) above.
-# #We create a new order with the params passed from the Edit form.
-# #Uses the exiting id too.
-# #Once updated we go back to the SHOW (get) route.
-# post '/pizza-orders/:id' do
-#   order = PizzaOrder.new(params)
-#   order.update()
-#   redirect "/pizza-orders/#{order.id}"
-# end
+
+get '/tracker/new/category' do
+  @categories = Category.all()
+  erb(:new_category)
+end
+
+post '/tracker/view/category' do
+  @category = Category.new(params)
+  @category.save()
+  redirect '/tracker/view/category'
+end

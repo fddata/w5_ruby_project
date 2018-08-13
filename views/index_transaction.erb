@@ -1,15 +1,22 @@
 <h1>Transaction Index</h1>
 
 
-<h2>Total spending: £<%= @transactions.sum(&:amount)   %></h2>
+<h2>Total spending: £<%= '%.2f' % @transactions.sum(&:amount)   %></h2>
 <hr>
 
 <% @transactions.each do |transaction| %>
 <p> Date: <%= transaction.time_stamp()[0..9] %> </p>
-<p>Amount: £<%= transaction.amount  %></p>
+<p>Amount: £<%= '%.2f' % transaction.amount  %></p>
 <p>Merchant: <%= transaction.merchant.name %> </p>
 <p>Category: <%= transaction.category.name %></p>
-<p> <a href="/tracker/edit/transaction/<%= transaction.id %>">Edit transaction</a> </p>
-<p> <a href="/tracker/delete/transaction/<%= transaction.id %>">Delete transaction</a> </p>
+
+<form action="/tracker/edit/transaction/<%= transaction.id %>" method="get">
+  <input type="submit" value="Edit Transaction">
+</form>
+<br>
+
+<form onsubmit="return confirm('Are you sure you want to delete this transaction?')" action="/tracker/delete/transaction/<%= transaction.id %>" method="post">
+  <input type="submit" value="Delete Transaction">
+</form>
 <hr>
 <% end %>
