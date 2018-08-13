@@ -2,12 +2,19 @@ DROP TABLE transactions; -- Drop the 'many' tables first
 DROP TABLE merchants;
 DROP TABLE categories;
 DROP TABLE users;
+DROP TABLE budgets;
 
 --Create the 'one' tables first, then the 'many' tables last.
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   budget FLOAT
+);
+
+CREATE TABLE budgets(
+  id SERIAL PRIMARY KEY,
+  total FLOAT,
+  time_stamp TIMESTAMP
 );
 
 CREATE TABLE merchants(

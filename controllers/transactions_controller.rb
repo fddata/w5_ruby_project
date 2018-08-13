@@ -27,9 +27,12 @@ end
 
 #CREATE
 post '/tracker/view/transaction' do
+  @budget = Budget.all().first
   @transaction = Transaction.new(params)
   @transaction.save()
-  redirect '/tracker/view/transaction'
+  @budget.total -= @transaction.amount
+  @budget.update()
+  redirect '/tracker'
 end
 
 #EDIT

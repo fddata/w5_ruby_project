@@ -1,5 +1,19 @@
 <h1>Welcome to My Finance Tracker!</h1>
 
 
+<p> Current budget: £<%= '%.2f' % @budget.total %></p>
+<p> Budget start date: <%= @budget.time_stamp[0..9] %></p>
 
-<p> Current budget: £<%= '%.2f' % @user.budget %></p>
+
+<form action="/tracker/ <%= @budget.id %>" method="post">
+
+<label for="budget">Set budget amount: £ </label>
+<input id="budget" type="number" name="total" value="<%= @budget.total %>" required>
+<br>
+
+<label for="budget">Set budget start date:</label>
+<input id="budget" type="date" name="time_stamp" value="<%= @budget.time_stamp %>" required>
+<br>
+<input type="submit" value="Update budget">
+
+</form>

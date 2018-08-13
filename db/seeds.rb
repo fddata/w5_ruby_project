@@ -2,6 +2,7 @@ require_relative '../models/category.rb'
 require_relative '../models/merchant.rb'
 require_relative '../models/user.rb'
 require_relative '../models/transaction.rb'
+require_relative '../models/budget.rb'
 
 require 'pry-byebug'
 
@@ -9,7 +10,15 @@ Category.delete_all()
 Merchant.delete_all()
 User.delete_all()
 Transaction.delete_all()
+Budget.delete_all()
 
+
+#Seeding a budget:
+budget = Budget.new({
+  'total' => 150,
+  'time_stamp' => Time.now()
+  })
+budget.save()
 
 #Seeding a user:
 user1 = User.new({
