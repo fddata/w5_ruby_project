@@ -14,7 +14,7 @@ Transaction.delete_all()
 #Seeding a user:
 user1 = User.new({
   'name' => 'user1',
-  'budget' => 0
+  'budget' => 100
   })
 
 user1.save()

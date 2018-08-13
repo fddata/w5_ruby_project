@@ -17,10 +17,12 @@ Mood: slightly worried I won't have enough time to do everything _and_ make the 
 
 Added views for transactions, merchants and categories.  Added a view of all transactions and discovered the in-built @transactions.sum(&:amount) method.
 
-**System Response**
-
 ***
-**User action**
+**2018_08_13 - Monday**
+
+AM:  Worked towards MVP.  Took surprisingly long to do all of the new, create, edit, update and  delete methods for each of the 3 classes!
+
+PM:  Reached MVP, then discovered it is much tidier to have separate controller files for each of the classes and run it all from a central app.rb file.  Went back in to tidy it up, my controllers and views folder are _much_  easier to read now!
 
 
 **System Response**
