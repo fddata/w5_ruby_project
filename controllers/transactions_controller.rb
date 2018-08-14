@@ -5,7 +5,8 @@ require 'pry-byebug'
 require_relative '../models/category.rb'
 require_relative '../models/merchant.rb'
 require_relative '../models/transaction.rb'
-require_relative '../models/user.rb'
+require_relative '../models/budget.rb'
+
 
 also_reload('models/*')
 
@@ -19,7 +20,6 @@ end
 
 #NEW
 get '/tracker/new/transaction' do
-  @user = User.all().first
   @merchants = Merchant.all()
   @categories = Category.all()
   erb(:"transactions/new_transaction")
