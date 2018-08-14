@@ -80,4 +80,16 @@ class Transaction
     return result.map { |transaction| Transaction.new(transaction)  }
   end
 
+  def self.order_ascending_amount
+    sql = "SELECT * FROM transactions ORDER BY amount"
+    result = SqlRunner.run(sql)
+    return result.map { |transaction| Transaction.new(transaction)  }
+  end
+
+  def self.order_descending_amount
+    sql = "SELECT * FROM transactions ORDER BY amount desc"
+    result = SqlRunner.run(sql)
+    return result.map { |transaction| Transaction.new(transaction)  }
+  end
+
 end

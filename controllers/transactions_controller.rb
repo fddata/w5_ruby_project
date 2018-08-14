@@ -77,3 +77,15 @@ get '/tracker/view/transaction/ascending' do
   @transactions = Transaction.order_ascending
   erb(:"transactions/index_transaction")
 end
+
+
+
+get "/tracker/view/transaction/price_ascending" do
+  @transactions = Transaction.order_ascending_amount
+  erb(:"transactions/index_transaction")
+end
+
+get "/tracker/view/transaction/price_descending" do
+  @transactions = Transaction.order_descending_amount
+  erb(:"transactions/index_transaction")
+end

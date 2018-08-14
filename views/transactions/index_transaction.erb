@@ -6,13 +6,23 @@
 <div class="grid-row">
 
   <form action="/tracker/view/transaction/ascending" method="get">
-    <input class="button" type="submit" value="Sort Oldest First">
+    <input class="button-sort" type="submit" value="Sort Oldest First">
   </form>
   <br>
 
   <form action="/tracker/view/transaction/descending" method="get">
-    <input class="button" type="submit" value="Sort Newest First">
+    <input class="button-sort" type="submit" value="Sort Newest First">
   </form>
+
+  <form action="/tracker/view/transaction/price_ascending" method="get">
+    <input class="button-sort" type="submit" value="Sort Lowest Amount">
+  </form>
+  <br>
+
+  <form action="/tracker/view/transaction/price_descending" method="get">
+    <input class="button-sort" type="submit" value="Sort Highest Amount">
+  </form>
+
 </div>
 <hr>
 

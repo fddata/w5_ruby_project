@@ -1,15 +1,23 @@
 
 <div class="grid-row">
   <div class="cell">
+    <div class="grid-column">
+        <div class="cell" style="border:none;">
     <h2>Your budget details:</h2>
+    </div
+        <div class="cell">
+    <h2 <%=@budget.budget_checker %>><%=@budget.budget_checker_warning %></h2>
+    </div
+  </div>
   </div>
 
 
   <div class="cell">
     <div class="grid-column">
 
-      <div class="subcell">
-        <p> Current budget: £<%= '%.2f' % @budget.total %></p>
+      <div class="subcell" <%=@budget.budget_checker %>>
+        <p > Current budget: £<%= '%.2f' % @budget.total %></p>
+
 
 
         <p> Budget start date: <%= @budget.time_stamp[0..9] %></p>

@@ -49,5 +49,22 @@ class Budget
     return Budget.new(result)
   end
 
+  def budget_checker
+    if total < 20
+      'style="color:red;"'
+    elsif total < 50
+      'style="color:orange;"'
+    end
+  end
+
+  def budget_checker_warning
+    if total < 20
+      'Warning very low budget!'
+    elsif total < 50
+      'Warning low budget!'
+    else
+      'Within Budget'
+    end
+  end
 
 end
