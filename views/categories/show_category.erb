@@ -1,10 +1,10 @@
-<h1>All Transactions with <%= @merchant.name %> </h1>
+<h1>All Transactions within <%= @category.name %> </h1>
 
 <h2>Total spending: £<%= '%.2f' % @transactions.sum(&:amount)   %></h2>
-<h2>Total spending at <%= @merchant.name %>: £<%= '%.2f' % @merchant.spending   %></h2>
+<h2>Total spending on <%= @category.name %>: £<%= '%.2f' % @category.spending   %></h2>
 <hr>
 
-<% @transactions.select {|transaction| transaction.merchant.name == @merchant.name}.each do |transaction| %>
+<% @transactions.select {|transaction| transaction.category.name == @category.name}.each do |transaction| %>
 
 
 <p> Date: <%= transaction.time_stamp()[0..9] %> </p>

@@ -16,6 +16,12 @@ get '/tracker/view/category' do
 end
 
 #SHOW
+get '/tracker/view/category/:id' do
+  @transactions = Transaction.all()
+  @category = Category.find(params[:id])
+  erb(:"categories/show_category")
+end
+
 
 #NEW
 get '/tracker/new/category' do

@@ -10,7 +10,11 @@
 <p>Total spending within category: £<%= category.spending %>  </p>
 
 
-
+<br>
+<form action="/tracker/view/category/<%= category.id %>" method="get">
+  <input type="submit" value="Show all Transactions for this Category">
+</form>
+<br>
 <form action="/tracker/edit/category/<%= category.id %>" method="get">
   <input type="submit" value="Edit Category">
 </form>
