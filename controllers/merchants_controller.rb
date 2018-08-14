@@ -18,6 +18,11 @@ get '/tracker/view/merchant' do
 end
 
 #SHOW
+get '/tracker/view/merchant/:id' do
+  @transactions = Transaction.all()
+  @merchant = Merchant.find(params[:id])
+  erb(:"merchants/show_merchant")
+end
 
 #NEW
 get '/tracker/new/merchant' do

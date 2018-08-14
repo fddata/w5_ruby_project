@@ -1,3 +1,4 @@
+puts "This is process #{Process.pid}"
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 
