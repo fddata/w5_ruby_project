@@ -1,7 +1,81 @@
+body {
+  background-color: rgba(215, 217, 206, 1);
+  padding-top: 60px;
+}
+
+
+h1, h2, h3, p, label {
+  font-family: 'Lato', sans-serif;
+}
+
+
+/* **************************************************
+/* *************** FLEXBOX ** START *****************
+/* **************************************************/
+
+
+
+.grid{
+padding-left: 5%;
+padding-right: 5%;
+}
+.grid-row{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 3em;
+}
+
+
+.grid-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.cell{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  border: 1px solid rgba(4, 4, 4, 1);
+text-align: center;
+vertical-align: middle;
+}
+
+
+.subcell{
+  width: 100%;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: : 0.8em;
+  /* border: 1px solid rgba(4, 4, 4, 1); */
+
+}
+
+/* **************************************************
+/* *************** FLEXBOX ** END *******************
+/* **************************************************/
+
+
+
+
+
+
+
+
+
+
+
+/* **************************************************
+/* *************** NAVBAR ** START ******************
+/* **************************************************/
+
 /* Giving a background-color to the nav container. */
 nav {
-    margin: 100px 0;
-    background-color: #E64A19;
+    background-color: rgba(19, 80, 91, 1);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 
 /* Removing padding, margin and "list-style" from the "ul",
@@ -15,17 +89,20 @@ nav ul {
 
 /* Positioning the navigation items inline */
 nav ul li {
-    margin: 0px -7px 0 0;
+    margin: 0px 8px 0 0;
     display:inline-block;
-    background-color: #E64A19;
+    position: center;
+    background-color: rgba(19, 80, 91, 1);
     }
 
-/* Styling the links */
+/* Styling the links and link text */
 nav a {
+  font-family: 'Roboto Slab', serif;
+
     display:block;
     padding:0 10px;
     color:#FFF;
-    font-size:20px;
+    font-size:22px;
     line-height: 60px;
     text-decoration:none;
 }
@@ -61,3 +138,29 @@ nav ul ul li {
     display:list-item;
     position: relative;
 }
+
+
+/* **************************************************
+/* *************** NAVBAR ** END ********************
+/* **************************************************/
+
+
+
+
+.button {
+    background-color: rgba(4, 4, 4, 1);
+    border: 1px solid rgba(4, 4, 4, 1);
+    color: rgba(215, 217, 206, 1);
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 0.2em;
+}
+
+.button:hover {
+  background-color: rgba(215, 217, 206, 1);
+  border: 1px solid rgba(4, 4, 4, 1);
+  color: rgba(4, 4, 4, 1);
+  text-decoration: bold;

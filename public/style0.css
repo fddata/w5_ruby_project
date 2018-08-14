@@ -1,0 +1,75 @@
+/* RGB */
+$color1: rgba(17, 157, 164, 1);
+$color2: rgba(12, 116, 137, 1);
+$color3: rgba(19, 80, 91, 1);
+$color4: rgba(4, 4, 4, 1);
+$color5: rgba(215, 217, 206, 1);
+
+
+body {
+  background-color: rgba(19, 80, 91, 1);
+}
+
+/* Giving a background-color to the nav container. */
+nav {
+    margin: 100px 0;
+    background-color: rgba(19, 80, 91, 1);
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    }
+
+/* Positioning the navigation items inline */
+nav ul li {
+    margin: 0px -7px 0 0;
+    display:inline-block;
+    background-color: rgba(19, 80, 91, 1);
+    }
+
+/* Styling the links */
+nav a {
+    display:block;
+    padding:0 10px;
+    color:#FFF;
+    font-size:20px;
+    line-height: 60px;
+    text-decoration:none;
+}
+
+/* Background color change on Hover */
+nav a:hover {
+    background-color: #000000;
+}
+
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+
+/* Display Dropdowns on Hover */
+nav ul ul:hover{
+    display:inherit;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+    display:inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+    min-width:170px;
+    display:list-item;
+    position: relative;
+}

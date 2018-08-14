@@ -10,6 +10,7 @@ require_relative('models/budget.rb')
 also_reload('models/*')
 
 get '/tracker' do
+  @transaction = Transaction.order_descending.first
   @budget = Budget.all().first
     erb( :index )
 end

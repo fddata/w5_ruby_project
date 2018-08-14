@@ -4,22 +4,24 @@
     <meta charset="utf-8">
     <title>My Finance Tracker</title>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
   </head>
   <body>
 
 
-    <nav>
-      <ul>
+
+    <nav class="main-navigation">
+      <ul class="menu">
         <li><a href="/tracker">My Dashboard</a></li>
-        <li><a href="#">Add...</a>
-          <ul>
+        <li class="menu-item-has-children"><a href="#">Add...</a>
+          <ul class="sub-menu">
             <li><a href="/tracker/new/transaction">Add transaction</a></li>
             <li><a href="/tracker/new/merchant">Add merchant</a></li>
             <li><a href="/tracker/new/category">Add category</a></li>
           </ul>
         </li>
-        <li><a href="#">View...</a>
-          <ul>
+        <li class="menu-item-has-children"><a href="#">View...</a>
+          <ul class="sub-menu">
             <li><a href="/tracker/view/transaction">View transactions</a></li>
             <li><a href="/tracker/view/merchant">View merchants</a></li>
             <li><a href="/tracker/view/category">View categories</a></li>
@@ -27,7 +29,9 @@
         </li>
       </ul>
     </nav>
+    <div class="grid">
     <%= yield %>
+  </div>
   </body>
 
 </body>

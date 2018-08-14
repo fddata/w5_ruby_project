@@ -3,31 +3,47 @@
 
 <h2>Total spending: £<%= '%.2f' % @transactions.sum(&:amount)   %></h2>
 
-<form action="/tracker/view/transaction/ascending" method="get">
-  <input type="submit" value="Sort Oldest First">
-</form>
-<br>
+<div class="grid-row">
 
-<form action="/tracker/view/transaction/descending" method="get">
-  <input type="submit" value="Sort Newest First">
-</form>
-<br>
+  <form action="/tracker/view/transaction/ascending" method="get">
+    <input class="button" type="submit" value="Sort Oldest First">
+  </form>
+  <br>
 
+  <form action="/tracker/view/transaction/descending" method="get">
+    <input class="button" type="submit" value="Sort Newest First">
+  </form>
+</div>
 <hr>
+
+
 
 <% @transactions.each do |transaction| %>
-<p> Date: <%= transaction.time_stamp()[0..9] %> </p>
-<p>Amount: £<%= '%.2f' % transaction.amount  %></p>
-<p>Merchant: <%= transaction.merchant.name %> </p>
-<p>Category: <%= transaction.category.name %></p>
+<div class="grid-row">
+  <div class="cell">
+    <p> Date: <%= transaction.time_stamp()[0..9] %> </p>
+  </div>
+  <div class="cell">
+    <p>Amount: £<%= '%.2f' % transaction.amount  %></p>
+  </div>
+  <div class="cell">
+    <p>Merchant: <%= transaction.merchant.name %> </p>
+  </div>
+  <div class="cell">
+    <p>Category: <%= transaction.category.name %></p>
+  </div>
 
-<form action="/tracker/edit/transaction/<%= transaction.id %>" method="get">
-  <input type="submit" value="Edit Transaction">
-</form>
-<br>
+  <div class="cell">
+    <form action="/tracker/edit/transaction/<%= transaction.id %>" method="get">
+      <input class="button" type="submit" value="Edit Transaction">
+    </form>
+  </div>
+  <div class="cell">
+    <form onsubmit="return confirm('Are you sure you want to delete this transaction?')" action="/tracker/delete/transaction/<%= transaction.id %>" method="post">
+      <input class="button" type="submit" value="Delete Transaction">
+    </form>
+  </div>
+  <hr>
+</div>
 
-<form onsubmit="return confirm('Are you sure you want to delete this transaction?')" action="/tracker/delete/transaction/<%= transaction.id %>" method="post">
-  <input type="submit" value="Delete Transaction">
-</form>
-<hr>
 <% end %>
