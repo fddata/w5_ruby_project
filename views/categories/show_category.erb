@@ -6,11 +6,21 @@
 
 <% @transactions.select {|transaction| transaction.category.name == @category.name}.each do |transaction| %>
 
+<div class="grid-row">
 
-<p> Date: <%= transaction.time_stamp()[0..9] %> </p>
-<p>Amount: £<%= '%.2f' % transaction.amount  %></p>
-<p>Merchant: <%= transaction.merchant.name %> </p>
-<p>Category: <%= transaction.category.name %></p>
+  <div class="cell">
+    <p> Date: <%= transaction.time_stamp()[0..9] %> </p>
+  </div>
+  <div class="cell">
+    <p>Amount: £<%= '%.2f' % transaction.amount  %></p>
+  </div>
+  <div class="cell">
+    <p>Merchant: <%= transaction.merchant.name %> </p>
+  </div>
+  <div class="cell">
+    <p>Category: <%= transaction.category.name %></p>
+  </div>
 
-<hr>
+</div>
 <% end %>
+<hr>

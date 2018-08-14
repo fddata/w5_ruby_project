@@ -4,19 +4,34 @@
 <hr>
 
 <% @merchants.each do |merchant| %>
-<p> Name: <%= merchant.name() %> </p>
-<p>Total spending at merchant: £<%= merchant.spending  %>  </p>
-<br>
-<form action="/tracker/view/merchant/<%= merchant.id %>" method="get">
-  <input type="submit" value="Show all Transactions with Merchant">
-</form>
-<br>
-<form action="/tracker/edit/merchant/<%= merchant.id %>" method="get">
-  <input type="submit" value="Edit Merchant">
-</form>
-<br>
-<form onsubmit="return confirm('Are you sure you want to delete this merchant?')" action="/tracker/delete/merchant/<%= merchant.id %>" method="post">
-  <input type="submit" value="Delete Merchant">
-</form>
-<hr>
-<% end %>
+<div class="grid-row">
+
+  <div class="cell">
+
+    <p> Name: <%= merchant.name() %> </p>
+</div>
+      <div class="cell">
+    <p>Total spending at merchant: £<%= merchant.spending  %>  </p>
+    <br>
+
+  </div>
+
+
+  <div class="cell">
+    <form action="/tracker/view/merchant/<%= merchant.id %>" method="get">
+      <input class="button" type="submit" value="Show related transactions">
+    </form>
+
+
+
+    <form action="/tracker/edit/merchant/<%= merchant.id %>" method="get">
+      <input class="button" type="submit" value="Edit Merchant">
+    </form>
+
+    <form onsubmit="return confirm('Are you sure you want to delete this merchant?')" action="/tracker/delete/merchant/<%= merchant.id %>" method="post">
+      <input class="button" type="submit" value="Delete Merchant">
+    </form>
+
+  </div>
+</div>
+  <% end %>

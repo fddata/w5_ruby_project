@@ -5,22 +5,27 @@
 <hr>
 
 <% @categories.each do |category| %>
-<p>Name: <%= category.name %></p>
+<div class="grid-row">
 
-<p>Total spending within category: £<%= category.spending %>  </p>
+  <div class="cell">
+    <p>Name: <%= category.name %></p>
+  </div>
+  <div class="cell">
+    <p>Total spending within category: £<%= category.spending %>  </p>
+  </div>
 
+  <div class="cell">
+    <form action="/tracker/view/category/<%= category.id %>" method="get">
+      <input class="button" type="submit" value="Show related transactions">
+    </form>
 
-<br>
-<form action="/tracker/view/category/<%= category.id %>" method="get">
-  <input type="submit" value="Show all Transactions for this Category">
-</form>
-<br>
-<form action="/tracker/edit/category/<%= category.id %>" method="get">
-  <input type="submit" value="Edit Category">
-</form>
-<br>
-<form onsubmit="return confirm('Are you sure you want to delete this category?')" action="/tracker/delete/category/<%= category.id %>" method="post">
-  <input type="submit" value="Delete Category">
-</form>
-<hr>
+    <form action="/tracker/edit/category/<%= category.id %>" method="get">
+      <input class="button" type="submit" value="Edit Category">
+    </form>
+
+    <form onsubmit="return confirm('Are you sure you want to delete this category?')" action="/tracker/delete/category/<%= category.id %>" method="post">
+      <input class="button" type="submit" value="Delete Category">
+    </form>
+  </div>
+</div>
 <% end %>
