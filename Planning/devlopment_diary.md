@@ -25,19 +25,25 @@ AM:  Worked towards MVP.  Took surprisingly long to do all of the new, create, e
 PM:  Reached MVP, then discovered it is much tidier to have separate controller files for each of the classes and run it all from a central app.rb file.  Went back in to tidy it up, my controllers and views folder are _much_  easier to read now!
 
 
-**System Response**
 
 ***
-**User action**
+**2018_08_14 - Tuesday**
+
+AM: tried to teach myself flexbox and apply _very simple_ styling to my site.  Took all day but managed to get a simple view I was happy with.
+
+PM:  Added the logic for the budget check extension, basically injects a little css into the html to change the colour depending on the budget.amount value.
 
 
-**System Response**
 
 ***
-**User action**
+**2018_08_15 - Wednesday - Submission Day**
+
+AM: realised the homepage fell over if there were no transactions present.  Added some simple logic that checks to see if there are any transactions then displays 'No Transaction' if not.  Took longer than it should have as I didn't understand the error message that told me the function was returning 'nil'.
+
+PM: Worked on presentation.  Need to add a footer and a way to avoid duplicate merchants / categories.
 
 
-**System Response**
+
 
 ***
 **User action**
