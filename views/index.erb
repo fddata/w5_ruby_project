@@ -2,26 +2,21 @@
 <div class="grid-row">
   <div class="cell">
     <div class="grid-column">
-        <div class="cell" style="border:none;">
-    <h2>Your budget details:</h2>
-    </div
+      <div class="cell" style="border:none;">
+        <h2>Your budget details:</h2>
+      </div
         <div class="cell">
-    <h2 <%=@budget.budget_checker %>><%=@budget.budget_checker_warning %></h2>
-    </div
-  </div>
+          <h2 <%=@budget.budget_checker %>><%=@budget.budget_checker_warning %></h2>
+        </div
+    </div>
   </div>
 
 
   <div class="cell">
     <div class="grid-column">
-
       <div class="subcell" <%=@budget.budget_checker %>>
         <p > Current budget: £<%= '%.2f' % @budget.total %></p>
-
-
-
         <p> Budget start date: <%= @budget.time_stamp[0..9] %></p>
-
       </div>
       <div class="subcell">
         <form action="/tracker/ <%= @budget.id %>" method="post">
@@ -35,36 +30,44 @@
           <br>
           <div class="subcell">
             <input class="button" type="submit" value="Update budget">
+            </form>
+            <br>
+            <br>
+          </div>
+          </div>
+    </div>
+  </div>
+</div>
 
-          </form>
-          <br>
-          <br>
+
+
+    <div class="grid-row">
+      <div class="cell">
+        <h2>Your most recent transaction:</h2>
+      </div>
+
+
+      <div class="cell">
+        <div class="grid-column">
+
+          <% if @transaction != nil %>
+
+          <p> Date: <%= @transaction.time_stamp[0..9] %> </p>
+
+          <p>Amount: £<%= '%.2f' % @transaction.amount  %></p>
+
+          <p>Merchant: <%= @transaction.merchant.name %> </p>
+
+          <p>Category: <%= @transaction.category.name %></p>
+
+          <%else %>
+
+          <p>No transaction found</p>
+
+          <% end %>
         </div>
       </div>
+
+
+
     </div>
-  </div>
-</div>
-
-
-
-<div class="grid-row">
-  <div class="cell">
-    <h2>Your most recent transaction:</h2>
-  </div>
-
-
-
-  <div class="cell">
-    <div class="grid-column">
-
-
-      <p> Date: <%= @transaction.time_stamp[0..9] %> </p>
-
-      <p>Amount: £<%= '%.2f' % @transaction.amount  %></p>
-
-      <p>Merchant: <%= @transaction.merchant.name %> </p>
-
-      <p>Category: <%= @transaction.category.name %></p>
-    </div>
-  </div>
-</div>

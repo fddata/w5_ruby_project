@@ -54,7 +54,7 @@ class Transaction
 
   def merchant
     sql = "SELECT merchants.* FROM merchants
-           WHERE merchants.id = $1"
+    WHERE merchants.id = $1"
     values =[@merchant_id]
     result = SqlRunner.run(sql, values).first
     return Merchant.new(result)
@@ -62,7 +62,7 @@ class Transaction
 
   def category
     sql = "SELECT categories.* FROM categories
-           WHERE categories.id = $1"
+    WHERE categories.id = $1"
     values =[@category_id]
     result = SqlRunner.run(sql, values).first
     return Category.new(result)
@@ -91,5 +91,8 @@ class Transaction
     result = SqlRunner.run(sql)
     return result.map { |transaction| Transaction.new(transaction)  }
   end
+
+
+
 
 end

@@ -63,7 +63,7 @@ class Budget
     elsif total < 50
       'Warning low budget!'
     else
-      'Within Budget'
+      'Spending within Budget'
     end
   end
 

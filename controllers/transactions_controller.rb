@@ -53,8 +53,11 @@ end
 
 #DELETE
 post '/tracker/delete/transaction/:id' do
+  @budget = Budget.all().first
   @transaction = Transaction.find(params[:id])
   @transaction.delete()
+  @budget.total += @transaction.amount
+  @budget.update()
   redirect '/tracker/view/transaction'
 end
 
@@ -79,12 +82,13 @@ get '/tracker/view/transaction/ascending' do
 end
 
 
-
+#ORDER TRANSACTIONS by AMOUNT
 get "/tracker/view/transaction/price_ascending" do
   @transactions = Transaction.order_ascending_amount
   erb(:"transactions/index_transaction")
 end
 
+#ORDER TRANSACTIONS by AMOUNT
 get "/tracker/view/transaction/price_descending" do
   @transactions = Transaction.order_descending_amount
   erb(:"transactions/index_transaction")
