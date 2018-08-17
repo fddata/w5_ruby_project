@@ -40,10 +40,28 @@ PM:  Added the logic for the budget check extension, basically injects a little 
 
 AM: realised the homepage fell over if there were no transactions present.  Added some simple logic that checks to see if there are any transactions then displays 'No Transaction' if not.  Took longer than it should have as I didn't understand the error message that told me the function was returning 'nil'.
 
-PM: Worked on presentation.  Need to add a footer and a way to avoid duplicate merchants / categories.
+PM: Worked on presentation.  
+
+Need to add:
+tests
+ a footer and a way to avoid duplicate merchants / categories.
 
 
+Presentation:
+Talk about project and planning
+- is built for who?  User? protos
+- site map
+a little demo
+Some troublesome code / proud of etc
+ - budget overview (cell within cell, warning methods etc)
+ - view by merchant / category etc - subspending overview
+ - sort buttons (different styling to show different use)
 
+What didn't work - the fact I didn't do a proper wireframe!
+What do you want to do from here? - colour coded methods / nicer forms / duplicate entries
+
+Diagrams:
+Class diagrams (pure ruby, box for each class, properties and datatype, methods)
 
 ***
 **User action**

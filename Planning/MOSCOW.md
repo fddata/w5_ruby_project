@@ -28,13 +28,12 @@
 
 * Show a budget overview on home screen?
 
-* Could allow
-
 * Show most recent transaction on home screen?
 
-* Allow multiple users?
 
 * Anything else I can think of (time permitting)
 
 
 #### WON'T
+
+* Allow multiple users?
