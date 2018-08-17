@@ -15,10 +15,10 @@ ruby app.rb
 
 ## Basic functionality
 
-The app was written for the solo Ruby project as part of the CodeClan course. It runs on Ruby/Sinatra with a PSQL database and is displayed using vanilla HTML / CSS. You can find the brief [HERE].
+The app was written for the solo Ruby project as part of the CodeClan course. It runs on Ruby/Sinatra with a PSQL database and is displayed using vanilla HTML / CSS. You can find the brief [here]( https://github.com/fddata/w5_ruby_project/blob/master/Planning/brief.md).
 
 The app provides the ability to monitor spending by linking transactions to retailers and categories.  In this way the user can filter transactions to identify and quantify spending habits.
 
 The user is also able to set a budget, and warnings are displayed once spending falls within certain limits.
 
-I had a lot of fun with this project, it helped me identify where I need to get better and re-enforced the  importance of planning.  The presentation I gave in class can be found [HERE].
+I had a lot of fun with this project, it helped me identify where I need to get better and re-enforced the  importance of planning.  The presentation I gave in class can be found [here]( https://github.com/fddata/w5_ruby_project/blob/master/Planning/presentation/Ruby%20Project%20Presentation%20(1).pdf).
