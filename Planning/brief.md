@@ -1,11 +1,3 @@
-# Project - Web Programming with Ruby
-
-Over the next week you will build an app to consolidate and expand on everything you have learned:
-
-* Object oriented programming with Ruby
-* Test Driven Development
-* Web Programming (REST, MVC)
-* Interacting with a PostgreSQL database (CRUD)
 
 ## Rules
 
@@ -50,49 +42,3 @@ Monzo, MoneyDashboard, lots of mobile/online banking apps
 * The user should be able to supply a budget, and the app should alert the user somehow when when they are nearing this budget or have gone over it.
 * The user should be able to filter their view of transactions, for example, to view all transactions in a given month, or view all spending on groceries.
 
-
-## Submission
-
-Submit a link to your Github repo through the Homework Submission form as soon as the repo has been created. The final project should be ready and pushed up to GitHub for **Wednesday at 12.**
-
-Your code will be reviewed with an instructor on Wednesday afternoon.
-
-You will have time on Wednesday afternoon to prepare for your presentation.
-
-## Presentation
-
-Presentations will be held on Thursday. You will have 10 minutes to present your work, with 5 additional minutes for questions.
-
-We expect you to:
-
-* Show your sketches, notes, diagrams, wireframes and user planning
-* Demonstrate your app's functionality
-* Talk about some code that you are particularly proud of
-* Highlight your main learning points
-
-Do not:
-
-* Talk through every single line of code
-* Go over the time limit
-
-## Asking for help
-
-The instructional team will be on hand for technical assistance, but you are strongly encouraged to take this opportunity to practise self-sufficiency, as will be expected of you as a professional software developer.
-
-Before asking an instructor for help this week, you should be ready to answer the following questions:
-
-* What are you trying to achieve?
-* What do you think the problem is?
-* What have you tried so far?
-* What did Google say about your error message?
-
-## Attendance
-
-The cohort will meet at the usual time every morning. Your attendance is recorded every day as normal.
-
-## PDA Reminder
-
-Remember to gather evidence for your PDA this week. This should only take 5 minutes:
-
-* Go to your [PDA Checklist](https://github.com/codeclan/pda/tree/master/Student%20Checklist)
-* Submit your PDA evidence (screenshots, etc.) to your own PDA repo
